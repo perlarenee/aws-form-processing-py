@@ -9,7 +9,7 @@ from datetime import datetime, timezone
 sqs = boto3.client("sqs")
 
 
-def handler(event, context):
+def lambda_handler(event, context):
     """Validates and forwards contact form submissions to SQS after reCAPTCHA verification."""
 
     request_method = event.get('requestContext', {}).get('http', {}).get('method', 'POST')
